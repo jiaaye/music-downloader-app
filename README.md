@@ -3,7 +3,7 @@
 本地音乐下载器。核心链路不依赖大模型。主数据存储使用 SQLite：
 
 ```text
-H:\音乐\music-downloader-app\music.db
+路径\music-downloader-app\music.db
 ```
 
 1. 从本地 `tracklist.csv` 读取歌手、专辑、歌曲。
@@ -16,7 +16,7 @@ H:\音乐\music-downloader-app\music.db
 ## 启动
 
 ```powershell
-cd H:\音乐\music-downloader-app
+cd 路径\music-downloader-app
 npm start
 ```
 
@@ -30,7 +30,7 @@ http://127.0.0.1:4587
 
 最简单的 NAS 部署方式是 Docker。镜像里会安装 Node.js、`yt-dlp` 和 `ffmpeg`，应用数据放在 `./data`，音乐目录挂载到容器的 `/music`。
 
-先编辑 `docker-compose.yml`，把左侧 NAS 音乐目录改成你的真实路径：
+先编辑 `docker-compose.yml`，把左侧 NAS 音乐目录改成真实路径：
 
 ```yaml
 volumes:
@@ -70,7 +70,7 @@ docker compose down
 /music                   实际音乐目录和下载目录
 ```
 
-注意：不要把本机 Windows 的 `config.json` 直接打进镜像。Docker 版本默认使用 `/data/config.json`，首次启动后在页面里设置下载目录即可，容器内路径通常填 `/music`。
+Docker 版本默认使用 `/data/config.json`，首次启动后在页面里设置下载目录即可，容器内路径通常填 `/music`。
 
 ## 曲库格式
 
