@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album Sources - Music Downloader</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="album-page">
+      <header class="album-header">
+        <div>
+          <div class="label">专辑下载清单</div>
+          <h1 id="albumTitle">正在载入</h1>
+          <p id="albumMeta"></p>
+        </div>
+        <div class="album-actions">
+          <button id="scanAlbum">扫描候选源</button>
+          <button id="downloadSelected" class="primary">下载确认清单</button>
+        </div>
+      </header>
+      <div class="rights album-rights">
+        <label>
+          <input type="checkbox" id="rightsCheck" />
+          我确认我有权下载所选内容
+        </label>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div id="progressFill"></div></div>
+        <div id="progressText" class="progress-text">等待扫描。</div>
+      </div>
+      <div id="status" class="status">点击“扫描候选源”生成可确认清单。</div>
+      <section id="reviewList" class="album-review"></section>
+    </main>
+    <script src="/album.js" type="module"></script>
+  </body>
+</html>

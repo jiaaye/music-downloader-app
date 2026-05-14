@@ -1,0 +1,17 @@
+services:
+  music-downloader:
+    build: .
+    container_name: music-downloader
+    restart: unless-stopped
+    ports:
+      - "4587:4587"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 4587
+      MUSIC_ROOT: /music
+      CONFIG_PATH: /data/config.json
+      DB_PATH: /data/music.db
+      PREVIEW_DIR: /data/preview-cache
+    volumes:
+      - ./data:/data
+      - /volume1/music:/music

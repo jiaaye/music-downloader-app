@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Downloader</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="mark">MD</div>
+          <div>
+            <h1>Music Downloader</h1>
+            <p>本地曲库 · B 站按需下载</p>
+          </div>
+        </div>
+        <div class="path-box">
+          <label for="downloadRoot">下载目录</label>
+          <input id="downloadRoot" />
+          <button id="savePath">保存路径</button>
+        </div>
+        <details class="llm-box">
+          <summary>大模型增强</summary>
+          <label>
+            <input type="checkbox" id="llmEnabled" />
+            启用候选源智能排序
+          </label>
+          <input id="llmBaseUrl" placeholder="OpenAI-compatible base URL" />
+          <input id="llmModel" placeholder="模型，例如 gpt-4o-mini" />
+          <input id="llmApiKey" type="password" placeholder="API Key，留空则保留原配置" />
+          <button id="saveLlm">保存大模型设置</button>
+          <div id="llmState" class="mini-note">默认关闭，不配置也可正常使用。</div>
+        </details>
+        <div class="search-box">
+          <input id="artistInput" placeholder="搜索歌手 / 专辑 / 歌曲" />
+          <button id="loadArtist">搜索</button>
+        </div>
+        <div id="searchResults" class="search-results"></div>
+        <button id="onlineSearch" class="secondary" disabled>在线搜索并建库</button>
+        <a class="secondary nav-link" href="/audio.html">搜索评书 / 有声书</a>
+        <div id="onlineResults" class="search-results"></div>
+        <div class="section-title">本地歌手</div>
+        <div id="artistList" class="artist-list"></div>
+      </aside>
+
+      <section class="library">
+        <header class="topbar">
+          <div>
+            <div class="label">当前歌手</div>
+            <h2 id="artistName">未选择</h2>
+          </div>
+          <div class="stats">
+            <span id="albumCount">0 张专辑</span>
+            <span id="songCount">0 首歌</span>
+          </div>
+        </header>
+        <div class="inline-search">
+          <input id="libraryFilter" placeholder="在当前歌手里筛选专辑或歌曲" />
+        </div>
+        <div id="albumList" class="album-list empty">选择一个歌手后显示专辑。</div>
+      </section>
+
+      <section class="tracks">
+        <header class="panel-head">
+          <div>
+            <div class="label">专辑曲目</div>
+            <h2 id="albumName">未选择专辑</h2>
+          </div>
+        </header>
+        <button id="downloadAlbum" class="secondary" disabled>批量下载当前专辑</button>
+        <div id="trackList" class="track-list empty">选择专辑后显示歌曲。</div>
+      </section>
+
+      <aside class="download">
+        <header class="panel-head">
+          <div>
+            <div class="label">下载</div>
+            <h2 id="selectedSong">未选择歌曲</h2>
+          </div>
+        </header>
+        <div class="rights">
+          <label>
+            <input type="checkbox" id="rightsCheck" />
+            我确认我有权下载所选内容
+          </label>
+        </div>
+        <button id="searchSources" class="primary" disabled>搜索候选源</button>
+        <div id="progressWrap" class="progress-wrap">
+          <div class="progress-bar"><div id="progressFill"></div></div>
+          <div id="progressText" class="progress-text">空闲</div>
+        </div>
+        <div id="status" class="status">等待选择歌曲。</div>
+        <div id="sourceList" class="source-list"></div>
+      </aside>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

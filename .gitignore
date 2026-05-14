@@ -1,0 +1,16 @@
+node_modules/
+data/
+preview-cache/
+
+config.json
+music.db
+music.db-shm
+music.db-wal
+
+server.out.log
+server.err.log
+npm-debug.log
+tmp-search.json
+
+.DS_Store
+Thumbs.db

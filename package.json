@@ -1,0 +1,15 @@
+{
+  "name": "music-downloader-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --no-warnings server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "opencc-js": "^1.3.1"
+  }
+}

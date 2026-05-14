@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Search - Music Downloader</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="album-page">
+      <header class="album-header">
+        <div>
+          <div class="label">有声内容</div>
+          <h1>评书 / 有声书搜索</h1>
+          <p>适合搜索长音频、合集、听书类内容。</p>
+        </div>
+        <div class="audio-search-box">
+          <input id="audioQuery" placeholder="例如：三国演义 评书 袁阔成" />
+          <button id="audioSearch" class="primary">搜索</button>
+        </div>
+      </header>
+      <div class="rights album-rights">
+        <label>
+          <input type="checkbox" id="rightsCheck" />
+          我确认我有权下载所选内容
+        </label>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div id="progressFill"></div></div>
+        <div id="progressText" class="progress-text">空闲</div>
+      </div>
+      <div id="status" class="status">输入关键词开始搜索。</div>
+      <section id="audioResults" class="album-review"></section>
+    </main>
+    <script src="/audio.js" type="module"></script>
+  </body>
+</html>

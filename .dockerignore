@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+music.db
+music.db-shm
+music.db-wal
+config.json
+server.out.log
+server.err.log
+preview-cache
+data
+.git
