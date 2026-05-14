@@ -38,7 +38,7 @@ git init
 git add .
 git commit -m "Initial release"
 git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_NAME/music-downloader-app.git
+git remote add origin https://github.com/jiaaye/music-downloader-app.git
 git push -u origin main
 ```
 
@@ -52,13 +52,13 @@ git push origin v0.1.0
 推送 `v0.1.0` 后，GitHub Actions 会自动构建并发布镜像：
 
 ```text
-ghcr.io/YOUR_GITHUB_NAME/music-downloader-app:v0.1.0
-ghcr.io/YOUR_GITHUB_NAME/music-downloader-app:latest
+ghcr.io/jiaaye/music-downloader-app:v0.1.0
+ghcr.io/jiaaye/music-downloader-app:latest
 ```
 
 ## 用户安装方式
 
-让用户保存 `docker-compose.example.yml`，把镜像名里的 `YOUR_GITHUB_NAME` 改成你的 GitHub 用户名，再把音乐目录改成自己的 NAS 路径：
+让用户保存 `docker-compose.example.yml`，把音乐目录改成自己的 NAS 路径：
 
 ```yaml
 volumes:

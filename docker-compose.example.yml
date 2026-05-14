@@ -1,6 +1,6 @@
 services:
   music-downloader:
-    image: ghcr.io/YOUR_GITHUB_NAME/music-downloader-app:latest
+    image: ghcr.io/jiaaye/music-downloader-app:latest
     container_name: music-downloader
     restart: unless-stopped
     ports:
